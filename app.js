@@ -1,14 +1,11 @@
 const express = require("express");
-
+const path = require("path");
 const app = express();
 
+app.use(express.static("public"));
+
 app.get("/", (request, response) => {
-  const photo = {
-    id: 1,
-    name: "photoName",
-    desc: "Photo Desc",
-  };
-  response.send(photo);
+  response.sendFile(path.resolve(__dirname, "temp/index.html"));
 });
 
 const port = 3000;
