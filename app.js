@@ -39,6 +39,14 @@ app.post("/photos", async (request, response) => {
   response.redirect("/");
 });
 
+app.get("/photos/:id", async (request, response) => {
+  const photo = await Photo.findById(request.params.id);
+
+  response.render("video-page", {
+    photo,
+  });
+});
+
 const port = 3000;
 
 app.listen(port, () => {
