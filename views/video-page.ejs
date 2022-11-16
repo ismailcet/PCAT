@@ -21,10 +21,7 @@
 					<div class="row mb-5 pb-4">
 						<div class="col-12">
 							<!-- Video player 1422x800 -->
-							<video width="1422" height="800" controls autoplay>
-							  <source src="video/wheat-field.mp4" type="video/mp4">							  
-							Your browser does not support the video tag.
-							</video>
+							<img src="<%= photo.image %>" alt="Image" class="img-fluid tm-catalog-item">
 						</div>
 					</div>
 					<div class="row mb-5 pb-5">
@@ -53,7 +50,7 @@
 									<span id="tm-likes-count">486 likes</span>
 								</a>
 								<div>
-									<button class="btn btn-primary p-0 tm-btn-animate tm-btn-download tm-icon-download"><span>Download Video</span></button>	
+									<a href="/photo/edit/<%= photo._id %>" class="btn btn-primary p-0 tm-btn-animate tm-btn-download tm-icon-download"><span>Edit Photo</span></a>	
 								</div>								
 							</div>
 						</div>
