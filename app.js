@@ -12,7 +12,9 @@ const pageControllers = require("./controllers/pageControllers");
 const app = express();
 
 //Connect To DB
-mongoose.connect("mongodb://localhost/pcat-text-db");
+mongoose.connect(
+  "mongodb+srv://ismail:1RHVRafG8yIzm7iU@cluster0.lrcjw8h.mongodb.net/pcat-db?retryWrites=true&w=majority"
+);
 
 //Tempalate Engine
 app.set("view engine", "ejs");
@@ -39,7 +41,7 @@ app.get("/about", pageControllers.getAbout);
 app.get("/add", pageControllers.getAdd);
 app.get("/photo/edit/:id", pageControllers.getEdit);
 
-const port = 3000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`Sunucu ${port} Portunda Başlatıldı`);
